@@ -12,6 +12,7 @@ var Patterns = module.exports = function (patterns) {
 
 var compile = function (ptn) {
   if (typeof ptn === 'string') return murl(ptn)
+  if (typeof ptn === 'function') return ptn
   return function (target) {
     return target.match(ptn)
   }
